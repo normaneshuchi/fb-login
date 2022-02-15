@@ -5,6 +5,7 @@
     --white: #fff;
     --border: #dbdbdb;
     --gray: #777;
+    --max-width: 1080px;
 }
 
 *,
@@ -17,13 +18,17 @@ body {
 }
 
 #app {
-    height: 100vh;
+    min-height: 60vh;
 }
 
 .main-logo {
     display: grid;
     place-content: center;
     padding-inline: 9rem;
+}
+
+#app>.main-logo>.tag {
+    display: none;
 }
 
 img {
@@ -51,6 +56,10 @@ button {
 
 .form {
     padding-inline: 1rem;
+}
+
+.form>.tag {
+    display: none;
 }
 
 .form input {
@@ -112,6 +121,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    min-height: 45vh;
 }
 
 footer>.lang {
@@ -136,4 +146,109 @@ footer>.copyright {
     font-size: 0.8rem;
     color: var(--gray);
     padding-bottom: 1rem;
+    max-width: var(--max-width);
+}
+
+footer>.divider {
+    display: none;
+}
+
+footer>.corp {
+    display: none;
+}
+
+
+/* desktop view */
+
+@media screen and (min-width: 768px) {
+    body {
+        background-color: var(--secondary);
+    }
+    #app {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1080px;
+        place-items: center;
+        padding-inline: 1rem;
+        margin-left: auto;
+        margin-right: auto;
+        min-height: 60vh;
+        /* margin-top: 8vh; */
+    }
+    #app>.main-logo {
+        padding: 1rem;
+        display: block;
+        padding-inline: 0;
+        margin-top: -6rem;
+    }
+    #app>.main-logo img {
+        margin-left: -2rem;
+        width: 60%;
+    }
+    #app>.main-logo>.tag {
+        display: block;
+        font-size: 2rem;
+    }
+    #app>.form>form {
+        background-color: var(--white);
+        padding: 2rem;
+        margin-inline: 2rem;
+        border-radius: 0.3rem;
+        border: 1px solid var(--border);
+    }
+    .form>.tag {
+        display: block;
+        padding-inline: 2rem;
+        text-align: center;
+        margin-block: 1rem;
+    }
+    .separator>span:before,
+    .separator>span:after {
+        background: #ccd0d5;
+        content: '';
+        height: 1px;
+        position: absolute;
+        width: 10vw;
+        left: auto;
+        right: 35vw;
+        margin-top: 0.5rem;
+        /* top: 30.5%; */
+    }
+    .separator>span:after {
+        left: auto;
+        right: 19vw;
+    }
+    footer {
+        min-height: 40vh;
+        position: relative;
+        background-color: var(--white);
+        padding-top: 2rem;
+    }
+    footer>.lang {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        padding-block: 1rem;
+        max-width: var(--max-width);
+        margin-inline: auto;
+        flex-wrap: wrap;
+    }
+    footer>.divider {
+        display: block;
+        height: 1px;
+        background-color: var(--border);
+        max-width: var(--max-width);
+        margin-inline: auto;
+    }
+    footer>.copyright {
+        display: none;
+    }
+    footer>.corp {
+        max-width: var(--max-width);
+        display: block;
+        text-align: left;
+        text-decoration: none;
+        color: var(--gray);
+        font-size: 0.8rem;
+    }
 }
