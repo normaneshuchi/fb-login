@@ -1,8 +1,139 @@
+:root {
+    --primary: #1877f2;
+    --secondary: #f5f6f7;
+    --accent: #00a400;
+    --white: #fff;
+    --border: #dbdbdb;
+    --gray: #777;
+}
+
+*,
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, sans-serif;
+    box-sizing: border-box;
+}
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    height: 100vh;
+}
+
+.main-logo {
+    display: grid;
+    place-content: center;
+    padding-inline: 9rem;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+input {
+    width: 100%;
+    padding-block: 1rem;
+    margin: 0;
+    padding-inline: 0.8rem;
+    background-color: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: 0.3rem;
+}
+
+button {
+    width: 100%;
+    padding-block: 1rem;
+    padding-inline: 1rem;
+    border: none;
+    border-radius: 0.3rem;
+}
+
+.form {
+    padding-inline: 1rem;
+}
+
+.form input {
+    margin-bottom: 0.5rem;
+}
+
+.form button.login {
+    background-color: var(--primary);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.form button.clear {
+    background-color: #fff;
+    color: var(--primary);
+    font-size: 0.9rem;
+}
+
+.separator {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+    white-space: nowrap;
+    background-color: var(--white);
+    font-size: 0.9rem;
+}
+
+.separator>span:before,
+.separator>span:after {
+    background: #ccd0d5;
+    content: '';
+    height: 1px;
+    position: absolute;
+    width: 40vw;
+    left: 5vw;
+    margin-top: 0.5rem;
+    /* top: 30.5%; */
+}
+
+.separator>span:after {
+    left: auto;
+    right: 5vw;
+}
+
+.new-account {
+    display: grid;
+    place-content: center;
+}
+
+.new-account>button {
+    background-color: var(--accent);
+    margin-block: 1rem;
+    color: var(--white)
+}
+
+footer {
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer>.lang {
+    display: grid;
+    padding-inline: 1rem;
+    justify-content: space-around;
+    text-align: center;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    padding-block: 3rem;
+    gap: 0.6rem;
+}
+
+footer>.lang>a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 0.8rem;
+}
+
+footer>.copyright {
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--gray);
+    padding-bottom: 1rem;
 }
