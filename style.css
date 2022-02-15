@@ -157,6 +157,10 @@ footer>.corp {
     display: none;
 }
 
+footer>.hidden-sm {
+    display: none;
+}
+
 
 /* desktop view */
 
@@ -250,5 +254,8 @@ footer>.corp {
         text-decoration: none;
         color: var(--gray);
         font-size: 0.8rem;
+    }
+    footer>.hidden-sm {
+        display: flex;
     }
 }
